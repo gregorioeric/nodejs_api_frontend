@@ -7,7 +7,28 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="btnForm">
+        <button id="btnOpenModal">Abrir Modal de Cadastro</button>
+    </div>
+
     <div id="resultado" class="resultado"></div>
+
+    <div class="modalFormCadastro" id="modalFormCadastro">
+        <form action="">
+            <div class="inputGroup">
+                <input type="text" id="nome" placeholder="Nome">
+                <input type="text" id="email" placeholder="Emil">
+                <input type="text" id="telefone" placeholder="Telefone">
+                <input type="text" id="cidade" placeholder="Cidade">
+                <input type="text" id="estado" placeholder="Estado">
+            </div>
+            <div class="btnGroup" id="btnGroup">
+                <button class="btn btnSave" id="btnSave">Cadastro</button>
+                <button class="btn btnAtualizar hide" id="btnAtualizar">Atualizar</button>
+                <button class="btn btnCancelar hide" id="btnCancelar">Cancelar</button>
+            </div>
+        </form>
+    </div>
 
     <script src="./assets/js/app.js"></script>
 </body>

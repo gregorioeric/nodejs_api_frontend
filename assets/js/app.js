@@ -10,6 +10,29 @@ const loadData = async () => {
   return data;
 };
 
-const result = loadData();
+const showData = async () => {
+  const getAllClientes = await loadData();
 
-console.log(result);
+  const showClientes = getAllClientes
+    .map((cliente) => {
+      return `
+        <div class="row">
+          <div class="col">${cliente.nome}</div>
+          <div class="col">${cliente.email}</div>
+          <div class="col">${cliente.telefone}</div>
+          <div class="col">${cliente.cidade}</div>
+          <div class="col">${cliente.estado}</div>
+          <div class="col">${cliente.data_cadastro}</div>
+          <div>
+              <button>Editar</button>
+              <button>Deletar</button>
+          </div>
+      </div>
+      `;
+    })
+    .join("");
+
+  resultado.innerHTML = showClientes;
+};
+
+showData();
