@@ -6,21 +6,26 @@
 
 .resultado {
     margin: 0 auto;
-    width: 80%;
+    width: 90%;
     display: flex;
     gap: 0.5rem;
     flex-direction: column;
+    border: 1px solid rgb(222, 222, 222);
 }
 
 .row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 25% 25% 10% 10% 5% 15% 10%;
     align-items: center;
     padding: 0.5rem 0;
-    border: 1px solid rgb(222, 222, 222);
+    border-bottom: 1px solid rgb(222, 222, 222);
 }
 
 .col {
     padding: 0 0.3rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .modalFormCadastro {
@@ -36,6 +41,13 @@
     backdrop-filter: blur(3px);
 }
 
+.modalFormCadastro form {
+    background: rgb(9, 117, 163)  ;
+    border-radius: 0.5rem;
+    width: 40%;
+    padding: 2rem;
+}
+
 .inputGroup{
     display: flex;
     flex-direction: column;
@@ -49,6 +61,7 @@
     font-size: 1.3rem;
     padding: 0.5rem 1rem;
     width: 100%;
+    outline: none;
 }
 
 .btnGroup {
@@ -67,4 +80,16 @@
 
 .hide {
     display: none;
+}
+
+.hide-modal{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 350ms ease-in-out, visibility 350ms ease-in-out;
+}
+
+.show-modal{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 350ms ease-in-out, visibility 350ms ease-in-out;
 }
