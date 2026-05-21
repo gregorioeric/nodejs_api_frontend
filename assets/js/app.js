@@ -9,6 +9,7 @@ const inputEmail = document.querySelector('input[id="email"]');
 const inputTelefone = document.querySelector('input[id="telefone"]');
 const inputCidade = document.querySelector('input[id="cidade"]');
 const inputEstado = document.querySelector('input[id="estado"]');
+const message = document.querySelector("#message");
 
 const api = "http://localhost:5600/";
 
@@ -66,6 +67,21 @@ btnSave.addEventListener("click", async (e) => {
     },
     body: JSON.stringify(clienteData),
   });
+
+  const res = await result.json();
+
+  message.innerHTML = `<div>${res.message}</div>`;
+
+  inputName.value = "";
+  inputEmail.value = "";
+  inputTelefone.value = "";
+  inputCidade.value = "";
+  inputEstado.value = "";
+
+  setTimeout(() => {
+    modalFormCadastro.classList.add("hide-modal");
+    modalFormCadastro.classList.remove("show-modal");
+  }, 3000);
 });
 
 btnOpenModal.addEventListener("click", () => {
